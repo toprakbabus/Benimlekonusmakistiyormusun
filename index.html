@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Benimle Konuşmak İstiyor musun?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #fff0f5;
+      padding-top: 100px;
+    }
+    h1 {
+      color: #d81b60;
+      font-size: 28px;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      margin: 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+    #yes {
+      background-color: #4caf50;
+      color: white;
+    }
+    #no {
+      background-color: #f44336;
+      color: white;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <h1>Benimle konuşmak istiyor musun?</h1>
+  <button id="yes">Evet</button>
+  <button id="no">Hayır</button>
+
+  <script>
+    const noBtn = document.getElementById("no");
+
+    function moveButton() {
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 100);
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    }
+
+    noBtn.addEventListener("mouseenter", moveButton);
+    noBtn.addEventListener("touchstart", moveButton);
+
+    document.getElementById("yes").addEventListener("click", () => {
+      alert("Evet... Bunu biliyordum 😎");
+    });
+  </script>
+</body>
+</html>
